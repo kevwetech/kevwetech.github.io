@@ -46,15 +46,22 @@ header{
 
 }
 body{
-  background-color: #0f172a;
-  color: #fff;
+  background-color:#1e293b;
+  color: var(--text, #fff);
+  font-family:system-ui, sans-serif;
+  line-height: 1.5;
 }
 
 nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+nav .btn{
+  text-decoration: none;
 }
 .nav-links{
   display: flex;
@@ -75,8 +82,11 @@ nav{
   color: #fff;
 }.k0{
   color: #fff;
-    font-size: 2.5rem;
-    font-weight: bold;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.nav-links li a:hover{
+  color: #00bfff;
 }
 .bigcon{
   width: 100%;
@@ -84,9 +94,8 @@ nav{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding-top: 50px;   
+  padding-top: 20px;   
   color: #fff;
-  padding-bottom: 50px;
 }
 .k6{
   width: 300px;
@@ -144,9 +153,58 @@ nav{
   opacity: 1;
   transform: translateY(0);
 }
+.kess2{
+    max-width: 600px;
+    background-color:#1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.k1{
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+    position: relative;
+    top: -20px;
+    margin: auto;
+}
+.k2{
+    margin-left: 20px;
+    position: relative;
+    top: -30px;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 1px;
+}
 .k3{
-  font-size: 17px;
-  font-family: 'Arial Narrow', sans-serif;
+    margin-left: 10px;
+    font-size: 1.1rem;
+    position: relative;
+    top: -25px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Arial Narrow', sans-serif;
+    padding: 10px;
+}
+.k4{
+    margin-left: 10px;
+    font-size: 1.1rem;
+    position: relative;
+    bottom: 25px;
+    color:#fff ;
+    text-align: center;
+    padding: 10px;
+}
+.k5{
+    margin-left: -120px;
+    font-size: 14px;
+    position: relative;
+    top: -20px;
 }
 .hire-btn{
   width: 100px;
@@ -169,6 +227,7 @@ nav{
   display: flex;
   align-items: center;
   justify-content: space-around;
+ 
 }
 .about-section {
   color: var(--text);
@@ -304,11 +363,13 @@ nav{
 #skills h2{
   text-align: center;
   padding: 20px;
+  color: #fff;
 }
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
+    color: #fff;
 }
 .skill-level{
   height: 100%;
@@ -356,6 +417,7 @@ nav{
 }
 #projects h2{
   text-align: center;
+  color: #fff;
 }
 .project-card h3 {
     margin: 1rem 0 0.5rem;
@@ -408,10 +470,14 @@ nav{
   opacity: 1;
   transform: scale(1);
 }
+#contact{
+  margin-bottom: 50px;
+}
 #contact h2{
   text-align: center;
   padding: 50px;
   font-size: 30px;
+  color: #fff;
 }
 form{
   display: flex;
@@ -426,6 +492,10 @@ form input, form textarea{
   background-color: #0f172a;
   border-radius: 5px;
   font-size: 1rem;
+  color: #fff;
+}
+form input, form textarea:focus{
+  outline: none;
 }
 form button{
   padding: 0.8rem;
@@ -444,6 +514,7 @@ form button a{
   background: #0f172a; /* dark blue */
   color: #cbd5f5;
   padding: 4rem 2rem 2rem;
+  margin-top: 50px;
 }
 
 .footer-container {
@@ -499,11 +570,16 @@ form button a{
 }
 
 @media (max-width: 768px) {
+  html,body{
+    overflow-x: hidden;
+  }
 
   header {
     width: 100%;
   }
-
+  nav .btn{
+    display: none;
+  }
   nav {
     width: 100%;
     height: 60px;
@@ -513,6 +589,7 @@ form button a{
   .menu-toggle {
     display: block;
     z-index: 1100;
+    color: #fff;
   }
 
   .nav-links {
@@ -520,11 +597,12 @@ form button a{
     inset: 0;
     background: #111;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     transform: translateX(100%);
     transition: transform 0.3s ease;
     z-index: 1000;
+
   }
 
   .nav-links.active {
@@ -537,10 +615,17 @@ form button a{
   }
 
   .bigcon {
-    flex-direction: column;
-    padding: 80px 16px 40px;
-    gap: 40px;
+    width: 90%;
     text-align: center;
+    margin: auto;
+  }
+  .kess2{
+    border: 2px solid gray;
+    margin: auto;
+    border-radius: 12px;
+    background-color: #1e293b;
+    color: #fff;
+    margin-top: 0;
   }
 
   .k6 {
@@ -552,24 +637,67 @@ form button a{
     width: 100%;
     height: auto;
     margin: 0;
-    align-items: center;
+    text-align: start;
   }
 
   .text {
     width: 100%;
-    font-size: 20px;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  .k4{
+    font-size: 1.1rem;
+    color: #fff;
   }
 
   #bigcon1 {
     flex-direction: column;
     height: auto;
     gap: 30px;
+    border: 2px solid gray;
+    width: 90%;
+    margin: auto;
+    border-radius: 12px;
+    background-color: #1e293b;
   }
 
   .smallcon1 {
-    width: 90%;
+    width: 85%;
     height: 300px;
     margin: 0;
+    border: 8px solid#111;
+    position: fixed;
+  }
+  #service2{
+    width: 90%;
+    border: 2px solid gray;
+    margin: auto;
+    border-radius: 12px;
+    background-color: #1e293b;
+  } 
+  #skills{
+    width: 90%;
+    border: 2px solid gray;
+    margin: auto;
+    border-radius: 12px;
+    background-color: #1e293b;
+  }
+  #projects{
+    width: 90%;
+    border: 2px solid gray;
+    margin: auto;
+    border-radius: 12px;
+    background-color: #1e293b;
+    padding-top: 30px;
+  }
+  #contact{
+    width: 90%;
+    border: 2px solid gray;
+    margin: auto;
+    border-radius: 12px;
+    background-color: #1e293b;
+    padding-top: 30px;
+    padding-bottom: 40px;
   }
 
   .about-text {
